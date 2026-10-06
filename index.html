@@ -342,56 +342,7 @@
     .map iframe { display: block; width: 100%; height: 100%; min-height: 20rem; border: 0; }
 
     /* ============================================================
-       9. PROJECT FILES
-       ============================================================ */
-    .files-cat {
-      display: flex; align-items: center; gap: .6rem;
-      margin: 2.25rem 0 1rem;
-      font-size: 1rem; letter-spacing: .05em; text-transform: uppercase;
-      color: var(--red); font-weight: 800;
-      padding-bottom: .55rem;
-      border-bottom: 2px solid rgba(200,50,31,.18);
-    }
-    .files-cat:first-of-type { margin-top: .5rem; }
-    .files-cat .icon { width: 1.15rem; height: 1.15rem; }
-    .files-cat .count {
-      margin-left: auto; font-size: .75rem; font-weight: 700;
-      background: rgba(200,50,31,.12); color: var(--red);
-      padding: .15rem .6rem; border-radius: 99px; letter-spacing: 0;
-    }
-    .file-list {
-      list-style: none; padding: 0; margin: 0;
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: .65rem;
-    }
-    .file-list a {
-      display: flex; align-items: center; gap: .7rem;
-      padding: .8rem 1rem; border-radius: 12px;
-      background: #fff; border: 1px solid var(--line);
-      color: var(--text); font-size: .92rem; font-weight: 600;
-      text-decoration: none;
-      box-shadow: var(--shadow-sm);
-      transition: transform .18s, box-shadow .18s, border-color .18s, color .18s;
-    }
-    .file-list a:hover {
-      transform: translateY(-3px);
-      border-color: rgba(200,50,31,.35);
-      box-shadow: 0 10px 24px rgba(200,50,31,.13);
-      color: var(--red);
-    }
-    .file-list a .icon {
-      width: 1.15rem; height: 1.15rem; flex: 0 0 1.15rem; opacity: .8;
-    }
-    .file-list a .meta {
-      margin-left: auto; font-size: .7rem; font-weight: 700;
-      color: var(--muted); letter-spacing: .04em;
-      background: var(--soft); padding: .15rem .5rem; border-radius: 6px;
-    }
-    .zip-file a { background: linear-gradient(135deg, #fff 0%, #fef5f3 100%); }
-    .zip-file a .icon { color: var(--red); opacity: 1; }
-
-    /* ============================================================
-       10. CONTACT FORM
+       9. CONTACT FORM
        ============================================================ */
     .contact-copy p { color: #b4bdc8; }
     .contact-copy .info a { color: #fff; }
@@ -424,7 +375,7 @@
     .done > .icon { width: 3.2rem; height: 3.2rem; padding: .75rem; border-radius: 50%; background: var(--wa); color: #fff; }
 
     /* ============================================================
-       11. FOOTER
+       10. FOOTER
        ============================================================ */
     .footer { padding-top: clamp(3rem, 7vw, 4.5rem); background: #0a0c0f; color: #aab3be; font-size: .95rem; }
     .footer ul { display: grid; gap: .5rem; }
@@ -451,7 +402,7 @@
     .wa-float .icon { width: 1.75rem; height: 1.75rem; }
 
     /* ============================================================
-       12. RESPONSIVE
+       11. RESPONSIVE
        ============================================================ */
     @media (min-width: 40em) {
       .grid--3, .grid--gallery { grid-template-columns: repeat(2, 1fr); }
@@ -520,12 +471,6 @@
     <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
     <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.7 7.4L3 20.5l1.6-5A8.5 8.5 0 1 1 21 11.5z"/><path d="M9 9c0 3 3 6 6 6"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></symbol>
-    <symbol id="i-file" viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/></symbol>
-    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6h6l2 3h10v11H3z"/></symbol>
-    <symbol id="i-zip" viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5M11 9v2M11 13v2M11 17v2"/></symbol>
-    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5M9 12h6M9 16h6"/></symbol>
-    <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></symbol>
-    <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 10v6M4.2 4.2l4.3 4.3m7 7 4.3 4.3M1 12h6m10 0h6M4.2 19.8l4.3-4.3m7-7 4.3-4.3"/></symbol>
   </svg>
 
   <a class="skip-link" href="#main">Skip to content</a>
@@ -547,7 +492,6 @@
           <li><a class="nav-link" href="#gallery">Gallery</a></li>
           <li><a class="nav-link" href="#reviews">Reviews</a></li>
           <li><a class="nav-link" href="#location">Location</a></li>
-          <li><a class="nav-link" href="#project-files">Files</a></li>
           <li><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
         <a class="btn btn--red" href="#contact">Book a Service</a>
@@ -696,6 +640,7 @@
         </div>
       </div>
     </section>
+
     <!-- ============ CONTACT ============ -->
     <section class="section section--dark" id="contact" aria-labelledby="contact-title">
       <div class="container split">
@@ -766,7 +711,6 @@
           <li><a href="#about">About</a></li>
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#reviews">Reviews</a></li>
-          <li><a href="#project-files">Files</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
