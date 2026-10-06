@@ -6,7 +6,16 @@
   const WHATSAPP = { number: '920000000000', message: 'Hello Al-Noor Auto Workshop, I would like to ask about your auto service.' }; // DEMO number
   const CONTACT = { tel: '+923000000000', email: 'info@example.com', subject: 'Service enquiry', body: 'Hello Al-Noor Auto Workshop, I would like to ask about your auto service.', address: '123 Main Road, Faisalabad, Pakistan' }; // DEMO details
   // Paste real photo URLs or paths here (e.g. 'images/hero.jpg'). Empty = generated placeholder.
-  const PHOTOS = { hero: '', workshop: '', g1: '', g2: '', g3: '', g4: '', g5: '', g6: '' };
+  const PHOTOS = {
+  hero: 'hero.svg',
+  workshop: 'workshop.svg',
+  g1: 'gallery-1.svg',
+  g2: 'gallery-2.svg',
+  g3: 'gallery-3.svg',
+  g4: 'gallery-4.svg',
+  g5: 'gallery-5.svg',
+  g6: 'gallery-6.svg'
+};
   const HOURS = { zone: 'Asia/Karachi', closedDay: 'Sun', open: 9, close: 19 };
 
   const $ = (s, el = document) => el.querySelector(s);
