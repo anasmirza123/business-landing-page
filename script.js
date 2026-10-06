@@ -8,6 +8,7 @@
     message: "Hello Al-Noor Auto Workshop, I'd like to book a service."
   };
 <button id="menuBtn">
+ document.getElementById("menuBtn")
   const $ = (selector, scope = document) => scope.querySelector(selector);
 
   // ---- WhatsApp links ----
