@@ -7,7 +7,7 @@
     number: '920000000000', // international format, digits only (DEMO placeholder)
     message: "Hello Al-Noor Auto Workshop, I'd like to book a service."
   };
-
+<button id="menuBtn">
   const $ = (selector, scope = document) => scope.querySelector(selector);
 
   // ---- WhatsApp links ----
