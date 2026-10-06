@@ -67,3 +67,9 @@ form.addEventListener("submit", (e) => {
   form.reset();
   success.hidden = false;
 });
+
+/* ===== Header state on scroll (styled by .is-scrolled in CSS) ===== */
+const header = document.querySelector(".site-header");
+const syncHeader = () => header.classList.toggle("is-scrolled", window.scrollY > 8);
+window.addEventListener("scroll", syncHeader, { passive: true });
+syncHeader();
