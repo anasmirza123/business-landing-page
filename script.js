@@ -1,107 +1,69 @@
-/* Al-Noor Auto Workshop: navigation, WhatsApp links, form validation. */
-(() => {
-  'use strict';
+/* ===== Config: replace with the real number (country code, digits only) ===== */
+const WHATSAPP_NUMBER = "920000000000";
+const WHATSAPP_MESSAGE = "Hello Al-Noor Auto Workshop, I would like to book a service.";
 
-  // ---- Edit these two values to change every WhatsApp link on the page ----
-  const WHATSAPP = {
-    number: '920000000000', // international format, digits only (DEMO placeholder)
-    message: "Hello Al-Noor Auto Workshop, I'd like to book a service."
-  };
-<button id="menuBtn">
- document.getElementById("menuBtn")
-  const $ = (selector, scope = document) => scope.querySelector(selector);
+document.querySelectorAll("[data-wa]").forEach((link) => {
+  link.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+});
 
-  // ---- WhatsApp links ----
-  const waUrl = `https://wa.me/${WHATSAPP.number}?text=${encodeURIComponent(WHATSAPP.message)}`;
-  document.querySelectorAll('[data-whatsapp]').forEach((link) => {
-    link.href = waUrl;
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
+/* ===== Mobile navigation ===== */
+const toggle = document.querySelector(".nav-toggle");
+const nav = document.getElementById("site-nav");
+
+function setMenu(open) {
+  nav.classList.toggle("open", open);
+  toggle.setAttribute("aria-expanded", String(open));
+}
+
+toggle.addEventListener("click", () => setMenu(!nav.classList.contains("open")));
+nav.addEventListener("click", (e) => { if (e.target.closest("a")) setMenu(false); });
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && nav.classList.contains("open")) { setMenu(false); toggle.focus(); }
+});
+
+/* ===== Active link while scrolling ===== */
+const navLinks = [...nav.querySelectorAll("ul a")];
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    navLinks.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === `#${entry.target.id}`));
   });
+}, { rootMargin: "-45% 0px -50% 0px" });
+document.querySelectorAll("main section[id]").forEach((s) => observer.observe(s));
 
-  // ---- Mobile menu ----
-  const header = $('.site-header');
-  const toggle = $('.nav-toggle');
-  const nav = $('#site-nav');
+/* ===== Contact form (front-end demo, no backend) ===== */
+const form = document.getElementById("contact-form");
+const success = document.getElementById("form-success");
 
-  const setMenu = (open) => {
-    nav.classList.toggle('is-open', open);
-    toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-  };
+const rules = {
+  name: (v) => (v.trim().length >= 2 ? "" : "Enter your full name."),
+  phone: (v) => (/^\+?[\d\s-]{9,15}$/.test(v.trim()) ? "" : "Enter a valid phone number, e.g. +92 300 0000000."),
+  email: (v) => (/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) ? "" : "Enter a valid email address."),
+  service: (v) => (v.trim() ? "" : "Tell us your vehicle or the service you need.")
+};
 
-  toggle.addEventListener('click', () => setMenu(toggle.getAttribute('aria-expanded') !== 'true'));
-  nav.addEventListener('click', (event) => { if (event.target.closest('a')) setMenu(false); });
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && nav.classList.contains('is-open')) {
-      setMenu(false);
-      toggle.focus();
-    }
+function validateField(name) {
+  const input = form.elements[name];
+  const message = rules[name](input.value);
+  document.getElementById(`${name}-error`).textContent = message;
+  input.setAttribute("aria-invalid", String(Boolean(message)));
+  input.setAttribute("aria-describedby", `${name}-error`);
+  return !message;
+}
+
+Object.keys(rules).forEach((name) => {
+  form.elements[name].addEventListener("blur", () => validateField(name));
+  form.elements[name].addEventListener("input", () => {
+    if (form.elements[name].getAttribute("aria-invalid") === "true") validateField(name);
   });
-  window.matchMedia('(min-width: 68em)').addEventListener('change', () => setMenu(false));
+});
 
-  // ---- Header shadow + active link while scrolling ----
-  const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
-  onScroll();
-  window.addEventListener('scroll', onScroll, { passive: true });
-
-  const links = [...document.querySelectorAll('.nav-link')];
-  const spy = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      links.forEach((link) => {
-        if (link.hash === `#${entry.target.id}`) link.setAttribute('aria-current', 'true');
-        else link.removeAttribute('aria-current');
-      });
-    });
-  }, { rootMargin: '-45% 0px -50% 0px' });
-  links.forEach((link) => { const target = $(link.hash); if (target) spy.observe(target); });
-
-  // ---- Contact form (frontend demo only) ----
-  const form = $('#contact-form');
-  const success = $('#form-success');
-
-  const rules = {
-    name: (v) => v.trim().length >= 2 || 'Enter your full name.',
-    phone: (v) => /^\+?[\d\s()-]{10,18}$/.test(v.trim()) && v.replace(/\D/g, '').length >= 10
-      || 'Enter a valid phone number, for example +92 300 0000000.',
-    email: (v) => !v.trim() || /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim())
-      || 'Enter a valid email address, for example you@example.com.',
-    service: (v) => v.trim().length >= 3 || 'Tell us your vehicle or the service you need.',
-    message: (v) => !v.trim() || v.trim().length >= 10 || 'Add a little more detail (at least 10 characters).'
-  };
-
-  const validate = (field) => {
-    const result = rules[field.name](field.value);
-    const error = $(`#${field.id}-error`);
-    const valid = result === true;
-    error.textContent = valid ? '' : result;
-    field.setAttribute('aria-invalid', String(!valid));
-    return valid;
-  };
-
-  const fields = [...form.elements].filter((el) => rules[el.name]);
-  fields.forEach((field) => {
-    field.addEventListener('blur', () => { if (field.value || field.required) validate(field); });
-    field.addEventListener('input', () => { if (field.getAttribute('aria-invalid') === 'true') validate(field); });
-  });
-
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const invalid = fields.filter((field) => !validate(field));
-    if (invalid.length) {
-      invalid[0].focus();
-      return;
-    }
-    form.hidden = true;
-    form.reset();
-    success.hidden = false;
-    success.focus();
-  });
-
-  $('#form-reset').addEventListener('click', () => {
-    success.hidden = true;
-    form.hidden = false;
-    fields[0].focus();
-  });
-})();
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  success.hidden = true;
+  Object.keys(rules).forEach(validateField);
+  const firstInvalid = Object.keys(rules).find((name) => form.elements[name].getAttribute("aria-invalid") === "true");
+  if (firstInvalid) { form.elements[firstInvalid].focus(); return; }
+  form.reset();
+  success.hidden = false;
+});

@@ -1,27 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Al-Noor Auto Workshop | Professional Auto Repair &amp; Service</title>
-  <link rel="stylesheet" href="style.css">
-  <meta name="description" content="Al-Noor Auto Workshop provides dependable vehicle repair, diagnostics and routine maintenance with clear communication and careful workmanship. Portfolio demo website.">
-  <meta name="theme-color" content="#0e1114">
-  <!-- TODO: replace example.com with the real domain -->
+  <meta name="description" content="Al-Noor Auto Workshop offers vehicle repair, routine maintenance, diagnostics, brake, AC and electrical service with clear communication and careful workmanship. Demo portfolio site.">
   <link rel="canonical" href="https://www.example.com/">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23c8321f'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%23fff' stroke-width='3'/%3E%3C/svg%3E">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Al-Noor Auto Workshop">
   <meta property="og:title" content="Al-Noor Auto Workshop | Professional Auto Repair &amp; Service">
-  <meta property="og:description" content="Dependable repair, diagnostics and maintenance with clear communication.">
+  <meta property="og:description" content="Reliable vehicle repair and maintenance with professional workmanship and customer-focused service.">
+  <meta property="og:image" content="https://www.example.com/images/hero.svg">
   <meta property="og:url" content="https://www.example.com/">
-  <meta property="og:image" content="https://www.example.com/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Al-Noor Auto Workshop | Professional Auto Repair &amp; Service">
-  <meta name="twitter:description" content="Dependable repair, diagnostics and maintenance with clear communication.">
-  <meta name="twitter:image" content="https://www.example.com/og-image.jpg">
+  <meta name="twitter:title" content="Al-Noor Auto Workshop">
+  <meta name="twitter:description" content="Reliable vehicle repair and maintenance with professional workmanship.">
+  <link rel="stylesheet" href="css/style.css">
 
-  <!-- Local business data: DEMO placeholders, replace with real details -->
+  <!-- Demo data: replace with the real business details. No ratings or reviews are declared. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -30,561 +25,220 @@
     "url": "https://www.example.com/",
     "telephone": "+92-300-0000000",
     "email": "info@example.com",
-    "address": { "@type": "PostalAddress", "streetAddress": "123 Main Road", "addressLocality": "Faisalabad", "addressRegion": "Punjab", "addressCountry": "PK" },
-    "areaServed": "Faisalabad",
-    "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "09:00", "closes": "19:00" }]
+    "image": "https://www.example.com/images/hero.svg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Main Road",
+      "addressLocality": "Faisalabad",
+      "addressCountry": "PK"
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "09:00",
+      "closes": "19:00"
+    }],
+    "makesOffer": ["Engine diagnostics","Oil and filter change","Brake service","AC and cooling","Tire and wheel service","Battery and electrical"]
   }
   </script>
-  <script>document.documentElement.classList.add('js');</script>
-
-  <style>
-    /* ===== 1. Tokens ===== */
-    :root {
-      --ink: #0e1114; --ink-2: #171b20; --ink-3: #242a32;
-      --red: #c8321f; --red-hi: #ff5a3d;       /* red for light bg, red-hi for dark bg */
-      --paper: #fff; --soft: #f3f4f6; --line: #e2e5e9;
-      --text: #1a1f26; --muted: #59636f; --wa: #0f7a42;
-      --r: .625rem; --hh: 4.25rem; --max: 72rem;
-      --shadow: 0 1px 2px rgba(14,17,20,.06), 0 10px 30px rgba(14,17,20,.07);
-      --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    }
-
-    /* ===== 2. Base ===== */
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: var(--hh); -webkit-text-size-adjust: 100%; }
-    body { margin: 0; font: 1rem/1.65 var(--font); color: var(--text); background: var(--paper); overflow-x: hidden; }
-    <script src="script.js"></script>
-    body.menu-open { overflow: hidden; }
-    img { display: block; max-width: 100%; height: auto; }
-    h1, h2, h3, p, ul, dl, dd, figure, blockquote { margin: 0; }
-    ul { padding: 0; list-style: none; }
-    h1, h2, h3 { line-height: 1.1; letter-spacing: -.025em; }
-    h1 { font-size: clamp(2.3rem, 7vw, 4.4rem); font-weight: 800; }
-    h2 { font-size: clamp(1.75rem, 4.6vw, 2.6rem); font-weight: 800; }
-    h3 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; }
-    a { color: inherit; }
-    :focus-visible { outline: 3px solid var(--red-hi); outline-offset: 3px; border-radius: 4px; }
-    .icon { width: 1.5rem; height: 1.5rem; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-
-    /* ===== 3. Layout & utilities ===== */
-    .container { width: min(100% - 2rem, var(--max)); margin-inline: auto; }
-    .sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
-    .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-    .skip-link { position: absolute; left: 1rem; top: -4rem; z-index: 100; padding: .75rem 1rem; background: var(--red); color: #fff; font-weight: 700; border-radius: var(--r); }
-    .skip-link:focus { top: 1rem; }
-    .section { padding-block: clamp(3.5rem, 9vw, 6.5rem); }
-    .section--soft { background: var(--soft); }
-    .section--dark { background: var(--ink); color: #fff; }
-    .head { display: grid; gap: .75rem; max-width: 40rem; margin-bottom: clamp(2rem, 5vw, 3rem); }
-    .head p { color: var(--muted); }
-    .section--dark .head p { color: #b4bdc8; }
-    .note { font-size: .9rem; padding-left: .75rem; border-left: 3px solid var(--red); }
-    .split { display: grid; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
-    .stack { display: grid; gap: 1.1rem; }
-    .grid { display: grid; gap: 1.25rem; }
-    .photo { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; background: var(--ink-3); border-radius: var(--r); }
-
-    /* Scroll reveal (only active when JS is running) */
-    .js .reveal { opacity: 0; translate: 0 14px; transition: opacity .6s ease, translate .6s ease, transform .25s ease, border-color .25s ease; }
-    .js .reveal.in { opacity: 1; translate: none; }
-
-    /* ===== 4. Buttons ===== */
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: .6rem; min-height: 3.1rem; padding: .75rem 1.6rem; border: 2px solid transparent; border-radius: var(--r); font: inherit; font-weight: 700; text-decoration: none; cursor: pointer; transition: background-color .2s, border-color .2s, color .2s, transform .1s; }
-    .btn:active { transform: translateY(1px); }
-    .btn--red { background: var(--red); color: #fff; }
-    .btn--red:hover { background: #a82a19; }
-    .btn--dark { background: var(--ink); color: #fff; }
-    .btn--dark:hover { background: var(--ink-3); }
-    .btn--ghost { border-color: rgba(255,255,255,.45); color: #fff; }
-    .btn--ghost:hover { background: rgba(255,255,255,.12); border-color: #fff; }
-    .btn--wa { background: var(--wa); color: #fff; }
-    .btn--wa:hover { background: #0b6537; }
-    .btn--block { width: 100%; }
-    .btn-row { display: grid; gap: .75rem; width: 100%; }
-
-    /* Live open/closed pill */
-    .status { display: inline-flex; align-items: center; gap: .5rem; padding: .3rem .85rem; border-radius: 99px; font-size: .875rem; font-weight: 600; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.25); color: #fff; }
-    .status::before { content: ""; width: .55rem; height: .55rem; border-radius: 50%; background: #9aa3ad; }
-    .status[data-open="true"]::before { background: #3ddc84; }
-    .status[data-open="false"]::before { background: var(--red-hi); }
-    .status--light { align-self: flex-start; background: var(--soft); border-color: var(--line); color: var(--text); }
-
-    /* ===== 5. Header & navigation ===== */
-    .header { position: sticky; top: 0; z-index: 50; background: rgba(14,17,20,.94); backdrop-filter: blur(10px); color: #fff; border-bottom: 1px solid rgba(255,255,255,.08); transition: box-shadow .2s; }
-    .header.scrolled { box-shadow: 0 8px 24px rgba(0,0,0,.35); }
-    .header-in { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: var(--hh); }
-    .brand { display: flex; align-items: center; gap: .7rem; font-weight: 800; letter-spacing: -.01em; text-decoration: none; line-height: 1.1; }
-    .brand-mark { display: grid; place-items: center; width: 2.4rem; height: 2.4rem; border-radius: .55rem; background: var(--red); }
-    .burger { display: grid; gap: 5px; place-content: center; width: 2.9rem; height: 2.9rem; padding: 0; background: none; border: 1px solid rgba(255,255,255,.25); border-radius: var(--r); cursor: pointer; }
-    .burger span { width: 1.3rem; height: 2px; background: #fff; transition: transform .25s, opacity .2s; }
-    .burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-    .burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    /* Mobile: full-screen menu panel */
-    .nav { position: fixed; inset: var(--hh) 0 0 0; display: flex; flex-direction: column; justify-content: space-between; gap: 1.5rem; padding: 1.25rem 1rem max(1.5rem, env(safe-area-inset-bottom)); background: var(--ink); overflow-y: auto; opacity: 0; visibility: hidden; transform: translateY(-.75rem); transition: opacity .25s, transform .25s, visibility .25s; }
-    .nav.open { opacity: 1; visibility: visible; transform: none; }
-    .nav-list { display: grid; }
-    .nav-link { display: block; padding: 1rem .25rem; border-bottom: 1px solid rgba(255,255,255,.1); font-size: 1.2rem; font-weight: 700; color: #d6dce3; text-decoration: none; transition: color .2s; }
-    .nav-link:hover { color: #fff; }
-    .nav-link[aria-current="true"] { color: var(--red-hi); }
-
-    /* ===== 6. Hero ===== */
-    .hero { position: relative; isolation: isolate; display: grid; align-content: space-between; min-height: min(46rem, calc(100svh - var(--hh))); color: #fff; background: var(--ink); }
-    .hero-img { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; }
-    .hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(10,13,16,.93) 0%, rgba(10,13,16,.75) 55%, rgba(10,13,16,.5) 100%); }
-    .hero-body { display: grid; justify-items: start; gap: 1.4rem; padding-block: clamp(3rem, 8vw, 5.5rem) 2.5rem; }
-    .hero-body > * { max-width: 41rem; }
-    .hero-text { font-size: 1.1rem; color: #dfe4ea; }
-    .trust { border-top: 1px solid rgba(255,255,255,.18); background: rgba(10,13,16,.55); }
-    .trust ul { display: grid; gap: .9rem; padding-block: 1.25rem; }
-    .trust li { display: flex; align-items: center; gap: .75rem; font-weight: 600; }
-    .trust .icon { color: var(--red-hi); }
-
-    /* ===== 7. Cards ===== */
-    .card { position: relative; display: flex; flex-direction: column; gap: .75rem; padding: 1.6rem; overflow: hidden; background: var(--paper); border: 1px solid var(--line); border-radius: var(--r); box-shadow: var(--shadow); transition: transform .25s, border-color .25s; }
-    .card::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform .35s; }
-    .card:hover { transform: translateY(-4px); }
-    .card:hover::before { transform: scaleX(1); }
-    .card p { color: var(--muted); }
-    .icon-box { display: grid; place-items: center; width: 3.1rem; height: 3.1rem; margin-bottom: .35rem; border: 1px solid var(--line); border-radius: var(--r); color: var(--red); transition: background-color .25s, color .25s, border-color .25s; }
-    .card:hover .icon-box { background: var(--red); border-color: var(--red); color: #fff; }
-    .card--dark { background: var(--ink-2); border-color: rgba(255,255,255,.09); box-shadow: none; }
-    .card--dark p { color: #b4bdc8; }
-    .card--dark .icon-box { border-color: rgba(255,255,255,.18); color: var(--red-hi); }
-
-    /* ===== 8. Sections ===== */
-    .about-media { position: relative; }
-    .about-media::before { content: ""; position: absolute; inset: 1rem -.75rem -.75rem 1rem; z-index: -1; border: 2px solid var(--red); border-radius: var(--r); }
-    .checks { display: grid; gap: .65rem; font-weight: 600; }
-    .checks li { display: flex; align-items: center; gap: .65rem; }
-    .checks .icon { color: var(--red); }
-
-    .shot { position: relative; display: block; width: 100%; padding: 0; overflow: hidden; border: 0; border-radius: var(--r); background: var(--ink-3); cursor: zoom-in; }
-    .shot img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; transition: transform .5s; }
-    .shot:hover img { transform: scale(1.05); }
-    .shot span { position: absolute; inset: auto 0 0; padding: 2rem 1rem .8rem; text-align: left; font-weight: 600; color: #fff; background: linear-gradient(transparent, rgba(10,13,16,.85)); }
-    .lightbox { width: min(92vw, 62rem); max-height: 92svh; padding: 0; border: 0; border-radius: var(--r); background: var(--ink); color: #fff; }
-    .lightbox::backdrop { background: rgba(5,7,9,.85); }
-    .lightbox img { width: 100%; max-height: 78svh; object-fit: contain; }
-    .lightbox p { padding: .9rem 1.25rem; font-weight: 600; }
-    .lightbox-close { position: absolute; top: .6rem; right: .6rem; display: grid; place-items: center; width: 2.6rem; height: 2.6rem; border: 0; border-radius: 50%; background: rgba(14,17,20,.8); color: #fff; font-size: 1.5rem; line-height: 1; cursor: pointer; }
-
-    .reviews { grid-template-columns: repeat(auto-fit, minmax(min(100%, 16.5rem), 1fr)); }
-    .stars { color: #c47a00; letter-spacing: .12em; }
-    .review blockquote p { color: var(--text); }
-    .who { display: flex; align-items: center; gap: .75rem; margin-top: auto; padding-top: .5rem; font-weight: 700; }
-    .avatar { display: grid; place-items: center; width: 2.6rem; height: 2.6rem; border-radius: 50%; background: var(--ink); color: #fff; font-size: .9rem; }
-
-    .info { display: grid; gap: 1.1rem; }
-    .info li { display: flex; align-items: flex-start; gap: .85rem; }
-    .info .icon { margin-top: .15rem; color: var(--red); }
-    .info address { font-style: normal; }
-    .info a { font-weight: 600; text-underline-offset: .2em; }
-    .hours { display: grid; grid-template-columns: auto 1fr; gap: .15rem 1rem; }
-    .hours dt { font-weight: 600; }
-    .map { min-height: 20rem; overflow: hidden; border-radius: var(--r); background: var(--line); box-shadow: var(--shadow); }
-    .map iframe { display: block; width: 100%; height: 100%; min-height: 20rem; border: 0; }
-
-    /* ===== 9. Contact form ===== */
-    .contact-copy p { color: #b4bdc8; }
-    .contact-copy .info a { color: #fff; }
-    .contact-copy .info .icon { color: var(--red-hi); }
-    .form-card { padding: clamp(1.25rem, 4vw, 2rem); background: var(--paper); color: var(--text); border-radius: var(--r); }
-    form { display: grid; gap: 1.1rem; }
-    form[hidden], .done[hidden] { display: none; }
-    .row { display: grid; gap: 1.1rem; }
-    .field { display: grid; gap: .35rem; }
-    label { font-weight: 700; font-size: .95rem; }
-    label i { color: var(--red); font-style: normal; }
-    input, textarea { width: 100%; padding: .8rem 1rem; font: inherit; color: var(--text); background: #fff; border: 1.5px solid #a3acb7; border-radius: var(--r); transition: border-color .2s, box-shadow .2s; }
-    input::placeholder, textarea::placeholder { color: #6b7684; }
-    input:focus, textarea:focus { outline: none; border-color: var(--ink); box-shadow: 0 0 0 3px rgba(200,50,31,.35); }
-    textarea { min-height: 7rem; resize: vertical; }
-    [aria-invalid="true"] { border-color: #b3202a; }
-    .err { font-size: .875rem; font-weight: 600; color: #b3202a; }
-    .err:empty { display: none; }
-    .fine { font-size: .85rem; color: var(--muted); text-align: center; }
-    .done { display: grid; gap: .75rem; justify-items: start; padding-block: 1rem; }
-    .done:focus { outline: none; }
-    .done > .icon { width: 3.2rem; height: 3.2rem; padding: .75rem; border-radius: 50%; background: var(--wa); color: #fff; }
-
-    /* ===== 10. Footer & floating WhatsApp ===== */
-    .footer { padding-top: clamp(3rem, 7vw, 4.5rem); background: #0a0c0f; color: #aab3be; font-size: .95rem; }
-    .footer ul { display: grid; gap: .5rem; }
-    .footer a:hover { color: var(--red-hi); }
-    .footer-grid { display: grid; gap: 2.25rem; }
-    .footer h2 { margin-bottom: .8rem; font-size: 1rem; letter-spacing: 0; color: #fff; }
-    .footer-bottom { display: grid; gap: .25rem; margin-top: 2.5rem; padding-block: 1.5rem; border-top: 1px solid rgba(255,255,255,.1); font-size: .85rem; }
-    .wa-float { position: fixed; right: max(1rem, env(safe-area-inset-right)); bottom: max(1rem, env(safe-area-inset-bottom)); z-index: 40; display: grid; place-items: center; width: 3.5rem; height: 3.5rem; border-radius: 50%; background: var(--wa); color: #fff; box-shadow: 0 8px 20px rgba(0,0,0,.3); transition: transform .2s, background-color .2s; }
-    .wa-float:hover { background: #0b6537; transform: scale(1.07); }
-    .wa-float .icon { width: 1.75rem; height: 1.75rem; }
-
-    /* ===== 11. Breakpoints (mobile-first) ===== */
-    @media (min-width: 40em) {
-      .grid--3, .grid--gallery { grid-template-columns: repeat(2, 1fr); }
-      .row { grid-template-columns: 1fr 1fr; }
-      .btn-row { display: flex; flex-wrap: wrap; width: auto; }
-      .footer-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (min-width: 52em) {
-      .split { grid-template-columns: 1fr 1fr; }
-      .split--map { grid-template-columns: 1fr 1.4fr; align-items: stretch; gap: 1.25rem; }
-      .trust ul { grid-template-columns: repeat(3, 1fr); }
-      .footer-bottom { grid-template-columns: 1fr auto; }
-    }
-    @media (min-width: 64em) {
-      .grid--3, .grid--gallery { grid-template-columns: repeat(3, 1fr); }
-      .footer-grid { grid-template-columns: 1.5fr 1fr 1.2fr 1.2fr; }
-    }
-    @media (min-width: 68em) {                    /* full desktop navigation */
-      .burger { display: none; }
-      .nav { position: static; flex-direction: row; align-items: center; gap: 1rem; padding: 0; background: none; overflow: visible; opacity: 1; visibility: visible; transform: none; }
-      .nav-list { display: flex; gap: .1rem; }
-      .nav-link { position: relative; padding: .5rem .7rem; border: 0; font-size: .95rem; }
-      .nav-link::after { content: ""; position: absolute; left: .7rem; right: .7rem; bottom: .15rem; height: 2px; background: var(--red-hi); transform: scaleX(0); transition: transform .25s; }
-      .nav-link:hover::after, .nav-link[aria-current="true"]::after { transform: scaleX(1); }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
-      .js .reveal { opacity: 1; translate: none; }
-    }
-  </style>
 </head>
 <body>
-  <!-- Icon sprite: <svg class="icon"><use href="#i-name"/></svg> -->
-  <svg class="sprite" aria-hidden="true" focusable="false">
-    <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
-    <symbol id="i-gauge" viewBox="0 0 24 24"><path d="m12 14 4-4M3.34 19a10 10 0 1 1 17.32 0"/></symbol>
-    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></symbol>
-    <symbol id="i-brake" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></symbol>
-    <symbol id="i-snow" viewBox="0 0 24 24"><path d="M2 12h20M12 2v20M16 4l-4 4-4-4M16 20l-4-4-4 4M4.9 7l14.2 10M19.1 7 4.9 17"/></symbol>
-    <symbol id="i-tire" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="2"/><path d="m4.9 4.9 4.2 4.2M14.9 14.9l4.2 4.2M19.1 4.9l-4.2 4.2M9.1 14.9l-4.2 4.2"/></symbol>
-    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></symbol>
-    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
-    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></symbol>
-    <symbol id="i-tag" viewBox="0 0 24 24"><path d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0L2 12V2h10l8.6 8.6a2 2 0 0 1 0 2.8z"/><circle cx="7" cy="7" r="1.5"/></symbol>
-    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v4M15 1v4M9 19v4M15 19v4M1 9h4M1 15h4M19 9h4M19 15h4"/></symbol>
-    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/></symbol>
-    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
-    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
-    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
-    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
-    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.7 7.4L3 20.5l1.6-5A8.5 8.5 0 1 1 21 11.5z"/><path d="M9 9c0 3 3 6 6 6"/></symbol>
-    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></symbol>
+  <!-- Icon sprite -->
+  <svg width="0" height="0" hidden aria-hidden="true">
+    <symbol id="i-chip" viewBox="0 0 24 24"><path d="M5 5h14v14H5zM9 9h6v6H9zM9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></symbol>
+    <symbol id="i-disc" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></symbol>
+    <symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 2v20M4.9 7l14.2 10M4.9 17L19.1 7"/></symbol>
+    <symbol id="i-tire" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 8v8M8 12h8"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.6-.6-.6-2.6z"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 12V3h9l9 9-9 9z"/><circle cx="7.5" cy="7.5" r="1"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21s-8-5-8-11a4.5 4.5 0 0 1 8-3 4.5 4.5 0 0 1 8 3c0 6-8 11-8 11z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></symbol>
   </svg>
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Header -->
-  <header class="header">
-    <div class="container header-in">
+  <header class="site-header">
+    <div class="container header-inner">
       <a class="brand" href="#home" aria-label="Al-Noor Auto Workshop, home">
-        <span class="brand-mark"><svg class="icon"><use href="#i-wrench"/></svg></span>
+        <svg class="icon brand-icon" aria-hidden="true"><use href="#i-wrench"/></svg>
         <span>Al-Noor Auto Workshop</span>
       </a>
-      <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><span></span><span></span><span></span></button>
-      <nav class="nav" id="nav" aria-label="Main">
-        <ul class="nav-list">
-          <li><a class="nav-link" href="#home">Home</a></li>
-          <li><a class="nav-link" href="#services">Services</a></li>
-          <li><a class="nav-link" href="#about">About</a></li>
-          <li><a class="nav-link" href="#why-us">Why Us</a></li>
-          <li><a class="nav-link" href="#gallery">Gallery</a></li>
-          <li><a class="nav-link" href="#reviews">Reviews</a></li>
-          <li><a class="nav-link" href="#location">Location</a></li>
-          <li><a class="nav-link" href="#contact">Contact</a></li>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#why-us">Why Us</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#location">Location</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
-        <a class="btn btn--red" href="#contact">Book a Service</a>
+        <a class="btn btn-primary nav-cta" href="#contact">Contact Us</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <!-- Hero -->
     <section class="hero" id="home" aria-labelledby="hero-title">
-      <img class="hero-img" data-photo="hero" data-label="Al-Noor Auto Workshop" data-hue="215" width="1200" height="800" fetchpriority="high" alt="Technician working on a car in a clean, well-lit auto workshop">
-      <div class="container hero-body">
-        <p class="status" data-status>Opening hours: Mon to Sat, 9 AM to 7 PM</p>
-        <h1 id="hero-title">Reliable Auto Care. Professional Service.</h1>
-        <p class="hero-text">Al-Noor Auto Workshop provides dependable vehicle repair, diagnostics and maintenance. We explain what your car needs, do the work carefully and keep you informed from drop-off to collection.</p>
+      <img class="hero-img" src="images/hero.svg" alt="Mechanic inspecting a car engine in a clean workshop bay" width="1600" height="900" fetchpriority="high">
+      <div class="container hero-content">
+        <p class="hero-name">Al-Noor Auto Workshop</p>
+        <h1 id="hero-title">Reliable Auto Repair. Professional Service.</h1>
+        <p class="hero-text">We provide dependable vehicle repair and maintenance with careful workmanship, honest advice, and a service experience built around you.</p>
         <div class="btn-row">
-          <a class="btn btn--red" href="#contact">Book a Service</a>
-          <a class="btn btn--ghost" href="#" data-wa><svg class="icon"><use href="#i-chat"/></svg>WhatsApp Us</a>
+          <a class="btn btn-primary" href="#contact">Book a Service</a>
+          <a class="btn btn-outline" data-wa href="https://wa.me/920000000000" target="_blank" rel="noopener">WhatsApp Us</a>
         </div>
-      </div>
-      <div class="trust">
-        <ul class="container">
-          <li><svg class="icon"><use href="#i-shield"/></svg>Professional Service</li>
-          <li><svg class="icon"><use href="#i-wrench"/></svg>Quality Workmanship</li>
-          <li><svg class="icon"><use href="#i-heart"/></svg>Customer Focused</li>
-        </ul>
       </div>
     </section>
 
-    <!-- Services -->
-    <section class="section section--soft" id="services" aria-labelledby="services-title">
+    <section class="section" id="services" aria-labelledby="services-title">
       <div class="container">
-        <div class="head reveal">
-          <h2 id="services-title">Our Professional Services</h2>
-          <p>Dependable repair and maintenance for everyday vehicles, from routine servicing to fault finding.</p>
+        <div class="section-head">
+          <h2 id="services-title">Our Auto Services</h2>
+          <p>Dependable repair and maintenance solutions for everyday vehicles, from routine servicing to fault finding.</p>
         </div>
-        <div class="grid grid--3">
-          <article class="card reveal"><span class="icon-box"><svg class="icon"><use href="#i-gauge"/></svg></span><h3>Engine Diagnostics</h3><p>Accurate vehicle diagnostics to identify problems efficiently.</p></article>
-          <article class="card reveal"><span class="icon-box"><svg class="icon"><use href="#i-drop"/></svg></span><h3>Oil &amp; Filter Service</h3><p>Routine maintenance designed to support reliable engine performance.</p></article>
-          <article class="card reveal"><span class="icon-box"><svg class="icon"><use href="#i-brake"/></svg></span><h3>Brake Service</h3><p>Inspection and maintenance for dependable braking performance.</p></article>
-          <article class="card reveal"><span class="icon-box"><svg class="icon"><use href="#i-snow"/></svg></span><h3>AC &amp; Cooling</h3><p>Vehicle AC and cooling-system inspection and servicing.</p></article>
-          <article class="card reveal"><span class="icon-box"><svg class="icon"><use href="#i-tire"/></svg></span><h3>Tire &amp; Wheel Service</h3><p>Professional tire inspection, rotation, balancing, and wheel care.</p></article>
-          <article class="card reveal"><span class="icon-box"><svg class="icon"><use href="#i-zap"/></svg></span><h3>Battery &amp; Electrical</h3><p>Battery testing and vehicle electrical diagnostics.</p></article>
+        <div class="grid grid-3">
+          <article class="card"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-chip"/></svg></span><h3>Engine Diagnostics</h3><p>Professional inspection and diagnostics to identify vehicle problems accurately.</p><a class="card-link" href="#contact">Learn more</a></article>
+          <article class="card"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-drop"/></svg></span><h3>Oil &amp; Filter Change</h3><p>Routine oil and filter replacement to help maintain engine performance.</p><a class="card-link" href="#contact">Learn more</a></article>
+          <article class="card"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-disc"/></svg></span><h3>Brake Service</h3><p>Brake inspection, repair, and maintenance for safer driving.</p><a class="card-link" href="#contact">Learn more</a></article>
+          <article class="card"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-snow"/></svg></span><h3>AC &amp; Cooling</h3><p>Vehicle AC inspection, servicing, and cooling-system maintenance.</p><a class="card-link" href="#contact">Learn more</a></article>
+          <article class="card"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-tire"/></svg></span><h3>Tire &amp; Wheel Service</h3><p>Tire inspection, balancing, rotation, and related wheel services.</p><a class="card-link" href="#contact">Learn more</a></article>
+          <article class="card"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-bolt"/></svg></span><h3>Battery &amp; Electrical</h3><p>Battery checks and basic vehicle electrical diagnostics and repair.</p><a class="card-link" href="#contact">Learn more</a></article>
         </div>
       </div>
     </section>
 
-    <!-- About -->
-    <section class="section" id="about" aria-labelledby="about-title">
+    <section class="section section-light" id="about" aria-labelledby="about-title">
       <div class="container split">
-        <div class="about-media reveal">
-          <img class="photo" data-photo="workshop" data-label="Workshop interior" data-hue="205" width="1200" height="800" loading="lazy" decoding="async" alt="Inside the workshop with a vehicle raised on a lift">
-        </div>
-        <div class="stack reveal">
-          <h2 id="about-title">Professional Auto Care You Can Trust</h2>
-          <p>Al-Noor Auto Workshop is a fictional garage created for this portfolio project, representing the kind of workshop people look for: honest, tidy and focused on keeping vehicles safe.</p>
-          <p>Every job starts with a proper inspection and a plain-language explanation of what needs doing now and what can wait.</p>
-          <ul class="checks">
-            <li><svg class="icon"><use href="#i-check"/></svg>Skilled technicians</li>
-            <li><svg class="icon"><use href="#i-check"/></svg>Clear communication</li>
-            <li><svg class="icon"><use href="#i-check"/></svg>Quality-focused service</li>
-            <li><svg class="icon"><use href="#i-check"/></svg>Customer-first approach</li>
+        <img class="rounded" src="images/workshop.svg" alt="Inside the Al-Noor Auto Workshop with vehicle lifts and tool storage" width="800" height="600" loading="lazy">
+        <div>
+          <h2 id="about-title">About Al-Noor Auto Workshop</h2>
+          <p>Al-Noor Auto Workshop is a fictional neighbourhood garage created for this portfolio project. The copy describes the kind of service a good local workshop should offer: careful work, plain explanations, and no pressure.</p>
+          <ul class="checklist">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Quality-focused repairs and maintenance</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Honest communication before any work starts</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Safe, dependable service for everyday vehicles</li>
           </ul>
-          <div><a class="btn btn--dark" href="#contact">Talk to our team</a></div>
+          <a class="btn btn-dark" href="#contact">Talk to our team</a>
         </div>
       </div>
     </section>
 
-    <!-- Why choose us -->
-    <section class="section section--dark" id="why-us" aria-labelledby="why-title">
+    <section class="section" id="why-us" aria-labelledby="why-title">
       <div class="container">
-        <div class="head reveal"><h2 id="why-title">Why Choose Al-Noor Auto Workshop?</h2><p>What you can expect every time you bring your vehicle in.</p></div>
-        <div class="grid grid--3">
-          <article class="card card--dark reveal"><span class="icon-box"><svg class="icon"><use href="#i-award"/></svg></span><h3>Skilled Technicians</h3><p>Professional attention to vehicle diagnostics and maintenance.</p></article>
-          <article class="card card--dark reveal"><span class="icon-box"><svg class="icon"><use href="#i-shield"/></svg></span><h3>Honest Service</h3><p>Clear explanations before work begins.</p></article>
-          <article class="card card--dark reveal"><span class="icon-box"><svg class="icon"><use href="#i-wrench"/></svg></span><h3>Quality Workmanship</h3><p>Careful and detail-oriented service.</p></article>
-          <article class="card card--dark reveal"><span class="icon-box"><svg class="icon"><use href="#i-tag"/></svg></span><h3>Transparent Approach</h3><p>Straightforward communication about vehicle needs.</p></article>
-          <article class="card card--dark reveal"><span class="icon-box"><svg class="icon"><use href="#i-cpu"/></svg></span><h3>Modern Diagnostics</h3><p>Efficient identification of vehicle issues.</p></article>
-          <article class="card card--dark reveal"><span class="icon-box"><svg class="icon"><use href="#i-heart"/></svg></span><h3>Customer First</h3><p>A service experience built around trust and reliability.</p></article>
+        <div class="section-head">
+          <h2 id="why-title">Why Choose Al-Noor Auto Workshop?</h2>
+        </div>
+        <div class="grid grid-3">
+          <article class="card"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg></span><h3>Experienced Technicians</h3><p>Skilled professionals focused on accurate and dependable vehicle service.</p></article>
+          <article class="card"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span><h3>Honest Service</h3><p>Clear communication about the work your vehicle needs.</p></article>
+          <article class="card"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-wrench"/></svg></span><h3>Quality Workmanship</h3><p>Careful attention to every repair and maintenance job.</p></article>
+          <article class="card"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-tag"/></svg></span><h3>Transparent Pricing</h3><p>Straightforward service information without unnecessary surprises.</p></article>
+          <article class="card"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-chip"/></svg></span><h3>Modern Diagnostics</h3><p>Appropriate diagnostic tools to identify vehicle issues efficiently.</p></article>
+          <article class="card"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></span><h3>Customer First</h3><p>A service experience designed around reliability, communication, and satisfaction.</p></article>
         </div>
       </div>
     </section>
 
-    <!-- Gallery (click an image for the lightbox) -->
-    <section class="section section--soft" id="gallery" aria-labelledby="gallery-title">
+    <section class="section section-dark" id="gallery" aria-labelledby="gallery-title">
       <div class="container">
-        <div class="head reveal"><h2 id="gallery-title">Our Workshop &amp; Recent Work</h2><p>Select any image to view it larger.</p></div>
-        <div class="grid grid--gallery">
-          <button class="shot reveal" type="button"><img data-photo="g1" data-label="Workshop exterior" data-hue="220" width="1200" height="800" loading="lazy" decoding="async" alt="Exterior of the Al-Noor Auto Workshop"><span>Workshop exterior</span></button>
-          <button class="shot reveal" type="button"><img data-photo="g2" data-label="Technician at work" data-hue="210" width="1200" height="800" loading="lazy" decoding="async" alt="Technician servicing a vehicle on the workshop floor"><span>Technician at work</span></button>
-          <button class="shot reveal" type="button"><img data-photo="g3" data-label="Engine inspection" data-hue="200" width="1200" height="800" loading="lazy" decoding="async" alt="Close-up of an engine bay during inspection"><span>Engine inspection</span></button>
-          <button class="shot reveal" type="button"><img data-photo="g4" data-label="Brake service" data-hue="225" width="1200" height="800" loading="lazy" decoding="async" alt="Brake disc and caliper being serviced"><span>Brake service</span></button>
-          <button class="shot reveal" type="button"><img data-photo="g5" data-label="Diagnostic equipment" data-hue="195" width="1200" height="800" loading="lazy" decoding="async" alt="Diagnostic scanner connected to a vehicle"><span>Diagnostic equipment</span></button>
-          <button class="shot reveal" type="button"><img data-photo="g6" data-label="Customer vehicle" data-hue="215" width="1200" height="800" loading="lazy" decoding="async" alt="Customer vehicle ready for collection"><span>Customer vehicle</span></button>
+        <div class="section-head">
+          <h2 id="gallery-title">Our Workshop &amp; Work</h2>
+          <p>Placeholder images. Swap in real photos of the workshop and completed jobs.</p>
+        </div>
+        <div class="grid gallery">
+          <img src="images/gallery-1.svg" alt="Workshop exterior with open service bays" width="600" height="450" loading="lazy">
+          <img src="images/gallery-2.svg" alt="Mechanic working under a lifted vehicle" width="600" height="450" loading="lazy">
+          <img src="images/gallery-3.svg" alt="Engine bay inspection in progress" width="600" height="450" loading="lazy">
+          <img src="images/gallery-4.svg" alt="Brake disc and caliper service" width="600" height="450" loading="lazy">
+          <img src="images/gallery-5.svg" alt="Diagnostic scanner connected to a vehicle" width="600" height="450" loading="lazy">
+          <img src="images/gallery-6.svg" alt="Finished customer vehicle ready for collection" width="600" height="450" loading="lazy">
         </div>
       </div>
     </section>
-    <dialog class="lightbox" id="lightbox" aria-label="Image preview">
-      <button class="lightbox-close" type="button" aria-label="Close preview">&times;</button>
-      <img alt=""><p></p>
-    </dialog>
 
-    <!-- Reviews (demo content) -->
     <section class="section" id="reviews" aria-labelledby="reviews-title">
       <div class="container">
-        <div class="head reveal"><h2 id="reviews-title">What Our Customers Say</h2><p class="note">Demo testimonials written for this portfolio project. They are not real customer reviews.</p></div>
-        <div class="grid reviews">
-          <article class="card review reveal"><p class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</p><blockquote><p>The team explained the problem clearly and completed the service professionally. The whole experience was smooth and straightforward.</p></blockquote><p class="who"><span class="avatar" aria-hidden="true">AR</span>Ahmed R.</p></article>
-          <article class="card review reveal"><p class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</p><blockquote><p>Professional service, friendly staff, and clear communication. I would definitely return for future maintenance.</p></blockquote><p class="who"><span class="avatar" aria-hidden="true">UK</span>Usman K.</p></article>
-          <article class="card review reveal"><p class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</p><blockquote><p>They told me what needed fixing now and what could wait. No pressure, and the car runs well.</p></blockquote><p class="who"><span class="avatar" aria-hidden="true">SM</span>Sana M.</p></article>
-          <article class="card review reveal"><p class="stars" role="img" aria-label="4 out of 5 stars">★★★★☆</p><blockquote><p>Booking was easy over WhatsApp and the work was finished when they said it would be.</p></blockquote><p class="who"><span class="avatar" aria-hidden="true">BA</span>Bilal A.</p></article>
+        <div class="section-head">
+          <h2 id="reviews-title">What Our Customers Say</h2>
+          <p>Demo testimonials for portfolio purposes. These are not real or verified customer reviews.</p>
+        </div>
+        <div class="grid grid-3">
+          <figure class="card quote"><div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote><p>The team explained the problem clearly and completed the service professionally. The whole experience was smooth and straightforward.</p></blockquote><figcaption>Ahmed R.</figcaption></figure>
+          <figure class="card quote"><div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote><p>Professional service, friendly staff, and clear communication. I would definitely return for future maintenance.</p></blockquote><figcaption>Usman K.</figcaption></figure>
+          <figure class="card quote"><div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote><p>I got a clear explanation of what my car needed and what could wait. No pressure, and the work was done on time.</p></blockquote><figcaption>Sana M.</figcaption></figure>
         </div>
       </div>
     </section>
 
-    <!-- Location -->
-    <section class="section section--soft" id="location" aria-labelledby="location-title">
-      <div class="container">
-        <div class="head reveal"><h2 id="location-title">Visit Our Workshop</h2><p class="note">The address and contact details are demo placeholders.</p></div>
-        <div class="split split--map">
-          <div class="card reveal">
-            <h3>Al-Noor Auto Workshop</h3>
-            <p class="status status--light" data-status></p>
-            <ul class="info">
-              <li><svg class="icon"><use href="#i-pin"/></svg><address>123 Main Road, Faisalabad, Pakistan</address></li>
-              <li><svg class="icon"><use href="#i-clock"/></svg><dl class="hours"><dt>Monday – Saturday</dt><dd>9:00 AM – 7:00 PM</dd><dt>Sunday</dt><dd>Closed</dd></dl></li>
-              <li><svg class="icon"><use href="#i-phone"/></svg><a href="tel:+923000000000">+92 300 0000000</a></li>
-              <li><svg class="icon"><use href="#i-chat"/></svg><a href="#" data-wa>Message us on WhatsApp</a></li>
-            </ul>
-          </div>
-          <!-- TODO: replace the iframe src with the real Google Maps "Embed a map" URL (needs internet) -->
-          <div class="map reveal">
-            <iframe title="Map showing the workshop area in Faisalabad" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Faisalabad%2C%20Pakistan&amp;output=embed"></iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="section section--dark" id="contact" aria-labelledby="contact-title">
+    <section class="section section-light" id="location" aria-labelledby="location-title">
       <div class="container split">
-        <div class="stack contact-copy reveal">
-          <h2 id="contact-title">Let's Get Your Vehicle Back on the Road</h2>
-          <p>Tell us about your vehicle and what it needs. We reply during opening hours, and WhatsApp is the fastest way to reach us.</p>
-          <div class="btn-row"><a class="btn btn--wa" href="#" data-wa><svg class="icon"><use href="#i-chat"/></svg>Chat on WhatsApp</a></div>
-          <ul class="info">
-            <li><svg class="icon"><use href="#i-phone"/></svg><a href="tel:+923000000000">+92 300 0000000</a></li>
-            <li><svg class="icon"><use href="#i-mail"/></svg><a href="mailto:info@example.com">info@example.com</a></li>
-          </ul>
+        <div>
+          <h2 id="location-title">Visit Our Workshop</h2>
+          <p class="note">Demo information. Replace the address and contact details before real use.</p>
+          <address>
+            <strong>Al-Noor Auto Workshop</strong><br>
+            123 Main Road, Faisalabad, Pakistan<br>
+            Phone: <a href="tel:+923000000000">+92 300 0000000</a><br>
+            WhatsApp: <a data-wa href="https://wa.me/920000000000" target="_blank" rel="noopener">Chat now</a>
+          </address>
+          <h3>Opening Hours</h3>
+          <dl class="hours">
+            <dt>Monday – Saturday</dt><dd>9:00 AM – 7:00 PM</dd>
+            <dt>Sunday</dt><dd>Closed</dd>
+          </dl>
         </div>
-        <div class="form-card reveal">
-          <form id="form" novalidate>
-            <div class="row">
-              <div class="field"><label for="name">Full name <i aria-hidden="true">*</i></label><input id="name" name="name" type="text" autocomplete="name" placeholder="Your full name" required aria-describedby="name-err"><p class="err" id="name-err"></p></div>
-              <div class="field"><label for="phone">Phone number <i aria-hidden="true">*</i></label><input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+92 300 0000000" required aria-describedby="phone-err"><p class="err" id="phone-err"></p></div>
-            </div>
-            <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" aria-describedby="email-err"><p class="err" id="email-err"></p></div>
-            <div class="field"><label for="service">Vehicle / service <i aria-hidden="true">*</i></label><input id="service" name="service" type="text" placeholder="e.g. Honda Civic 2018, brake service" required aria-describedby="service-err"><p class="err" id="service-err"></p></div>
-            <div class="field"><label for="message">Message</label><textarea id="message" name="message" rows="4" placeholder="Describe the problem or the service you need" aria-describedby="message-err"></textarea><p class="err" id="message-err"></p></div>
-            <button class="btn btn--red btn--block" type="submit">Send Inquiry</button>
-            <p class="fine">Demo form: nothing is sent or stored.</p>
-          </form>
-          <div class="done" id="done" role="status" tabindex="-1" hidden>
-            <svg class="icon"><use href="#i-check"/></svg>
-            <h3>Inquiry received</h3>
-            <p>Thank you. In a live version, our team would contact you shortly.</p>
-            <button class="btn btn--dark" type="button" id="again">Send another inquiry</button>
-          </div>
+        <!-- To use the real location, change the "q" value in the iframe src below. -->
+        <iframe class="map rounded" title="Map showing the workshop area in Faisalabad" src="https://maps.google.com/maps?q=Faisalabad,Pakistan&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container contact">
+        <div class="section-head">
+          <h2 id="contact-title">Get In Touch</h2>
+          <p>Tell us about your vehicle and what you need. We will get back to you during opening hours.</p>
+          <a class="btn btn-whatsapp" data-wa href="https://wa.me/920000000000" target="_blank" rel="noopener">Chat on WhatsApp</a>
         </div>
+        <form class="form" id="contact-form" novalidate>
+          <div class="field"><label for="name">Full name</label><input id="name" name="name" type="text" autocomplete="name" placeholder="Your full name" required><span class="error" id="name-error"></span></div>
+          <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+92 300 0000000" required><span class="error" id="phone-error"></span></div>
+          <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required><span class="error" id="email-error"></span></div>
+          <div class="field"><label for="service">Vehicle / service</label><input id="service" name="service" type="text" placeholder="e.g. Honda City 2018, brake check" required><span class="error" id="service-error"></span></div>
+          <div class="field field-full"><label for="message">Message</label><textarea id="message" name="message" rows="4" placeholder="Describe the problem or service you need"></textarea></div>
+          <button class="btn btn-primary field-full" type="submit">Send Inquiry</button>
+          <p class="success" id="form-success" role="status" hidden>Thank you. This is a demo form, so no message was sent.</p>
+        </form>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
+  <footer class="site-footer">
     <div class="container footer-grid">
-      <div><h2>Al-Noor Auto Workshop</h2><p>Dependable repair, diagnostics and maintenance with clear communication.</p></div>
-      <nav aria-label="Footer"><h2>Quick links</h2><ul><li><a href="#home">Home</a></li><li><a href="#services">Services</a></li><li><a href="#about">About</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#contact">Contact</a></li></ul></nav>
-      <div><h2>Contact</h2><ul><li><a href="tel:+923000000000">+92 300 0000000</a></li><li><a href="mailto:info@example.com">info@example.com</a></li><li><a href="#" data-wa>WhatsApp</a></li><li>123 Main Road, Faisalabad, Pakistan</li></ul></div>
-      <div><h2>Opening hours</h2><ul><li>Monday – Saturday: 9 AM – 7 PM</li><li>Sunday: Closed</li></ul></div>
+      <div><h2 class="footer-title">Al-Noor Auto Workshop</h2><p>Reliable repair and maintenance with clear communication.</p></div>
+      <nav aria-label="Footer"><h3>Quick Links</h3><ul>
+        <li><a href="#home">Home</a></li><li><a href="#services">Services</a></li><li><a href="#about">About</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+      <div><h3>Contact</h3><ul>
+        <li><a href="tel:+923000000000">+92 300 0000000</a></li>
+        <li><a data-wa href="https://wa.me/920000000000" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a href="mailto:info@example.com">info@example.com</a></li>
+        <li>123 Main Road, Faisalabad</li></ul></div>
+      <div><h3>Opening Hours</h3><ul><li>Monday–Saturday: 9 AM–7 PM</li><li>Sunday: Closed</li></ul></div>
     </div>
-    <div class="container footer-bottom"><p>&copy; 2026 Al-Noor Auto Workshop. All rights reserved.</p><p>Portfolio Demo Project. Business details are fictional.</p></div>
+    <div class="container footer-bottom"><p>© 2026 Al-Noor Auto Workshop. All rights reserved.</p><p>Designed &amp; developed as a portfolio project. All business details are fictional.</p></div>
   </footer>
 
-  <a class="wa-float" href="#" data-wa aria-label="Chat on WhatsApp"><svg class="icon"><use href="#i-chat"/></svg></a>
+  <a class="wa-float" data-wa href="https://wa.me/920000000000" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WhatsApp</a>
 
-  <script>
-    (() => {
-      'use strict';
-
-      /* ---- Editable settings ---- */
-      const WHATSAPP = { number: '920000000000', message: "Hello Al-Noor Auto Workshop, I'd like to book a service." }; // DEMO number
-      // Paste real photo URLs or paths here (e.g. 'images/hero.jpg'). Empty = generated placeholder.
-      const PHOTOS = { hero: '', workshop: '', g1: '', g2: '', g3: '', g4: '', g5: '', g6: '' };
-      const HOURS = { zone: 'Asia/Karachi', closedDay: 'Sun', open: 9, close: 19 };
-
-      const $ = (s, el = document) => el.querySelector(s);
-      const $$ = (s, el = document) => [...el.querySelectorAll(s)];
-
-      /* ---- Images: real photo if provided, otherwise an inline placeholder ---- */
-      const placeholder = (label, hue) => 'data:image/svg+xml,' + encodeURIComponent(
-        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="hsl(${hue},18%,26%)"/><stop offset="1" stop-color="hsl(${hue},24%,8%)"/></linearGradient></defs><rect width="1200" height="800" fill="url(#g)"/><g fill="none" stroke="#ff5a3d" stroke-width="6" opacity=".55"><circle cx="600" cy="330" r="110"/><circle cx="600" cy="330" r="38"/><path d="M600 220v72M600 368v72M490 330h72M638 330h72"/></g><text x="600" y="560" text-anchor="middle" font-family="sans-serif" font-size="46" font-weight="700" fill="#fff">${label}</text><text x="600" y="606" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#fff" opacity=".55">Placeholder: set a photo in PHOTOS</text></svg>`);
-      $$('img[data-photo]').forEach((img) => {
-        img.src = PHOTOS[img.dataset.photo] || placeholder(img.dataset.label, img.dataset.hue);
-      });
-
-      /* ---- WhatsApp links ---- */
-      const waUrl = `https://wa.me/${WHATSAPP.number}?text=${encodeURIComponent(WHATSAPP.message)}`;
-      $$('[data-wa]').forEach((a) => { a.href = waUrl; a.target = '_blank'; a.rel = 'noopener noreferrer'; });
-
-      /* ---- Live open / closed status (workshop time zone) ---- */
-      const parts = new Intl.DateTimeFormat('en-US', { timeZone: HOURS.zone, weekday: 'short', hour: 'numeric', hour12: false }).formatToParts(new Date());
-      const day = parts.find((p) => p.type === 'weekday').value;
-      const hour = Number(parts.find((p) => p.type === 'hour').value) % 24;
-      const isOpen = day !== HOURS.closedDay && hour >= HOURS.open && hour < HOURS.close;
-      $$('[data-status]').forEach((el) => {
-        el.dataset.open = String(isOpen);
-        el.textContent = isOpen ? 'Open now, until 7 PM' : 'Closed now, open Mon to Sat from 9 AM';
-      });
-
-      /* ---- Mobile menu ---- */
-      const header = $('.header'), burger = $('.burger'), nav = $('#nav');
-      const setMenu = (open) => {
-        nav.classList.toggle('open', open);
-        document.body.classList.toggle('menu-open', open);
-        burger.setAttribute('aria-expanded', String(open));
-        burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-      };
-      burger.addEventListener('click', () => setMenu(burger.getAttribute('aria-expanded') !== 'true'));
-      nav.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && nav.classList.contains('open')) { setMenu(false); burger.focus(); }
-      });
-      matchMedia('(min-width: 68em)').addEventListener('change', () => setMenu(false));
-
-      /* ---- Header shadow, active link, reveal on scroll ---- */
-      const onScroll = () => header.classList.toggle('scrolled', scrollY > 8);
-      onScroll();
-      addEventListener('scroll', onScroll, { passive: true });
-
-      const links = $$('.nav-link');
-      const spy = new IntersectionObserver((entries) => entries.forEach((en) => {
-        if (!en.isIntersecting) return;
-        links.forEach((l) => (l.hash === '#' + en.target.id ? l.setAttribute('aria-current', 'true') : l.removeAttribute('aria-current')));
-      }), { rootMargin: '-45% 0px -50% 0px' });
-      links.forEach((l) => { const t = $(l.hash); if (t) spy.observe(t); });
-
-      const reveal = new IntersectionObserver((entries, obs) => entries.forEach((en) => {
-        if (en.isIntersecting) { en.target.classList.add('in'); obs.unobserve(en.target); }
-      }), { threshold: 0.12 });
-      $$('.reveal').forEach((el) => reveal.observe(el));
-
-      /* ---- Gallery lightbox (native <dialog>) ---- */
-      const box = $('#lightbox'), boxImg = $('img', box), boxCap = $('p', box);
-      $$('.shot').forEach((btn) => btn.addEventListener('click', () => {
-        const img = $('img', btn);
-        boxImg.src = img.currentSrc || img.src;
-        boxImg.alt = img.alt;
-        boxCap.textContent = $('span', btn).textContent;
-        box.showModal();
-      }));
-      $('.lightbox-close', box).addEventListener('click', () => box.close());
-      box.addEventListener('click', (e) => { if (e.target === box) box.close(); });
-
-      /* ---- Contact form (frontend demo) ---- */
-      const form = $('#form'), done = $('#done');
-      const rules = {
-        name: (v) => v.trim().length >= 2 || 'Enter your full name.',
-        phone: (v) => (/^\+?[\d\s()-]{10,18}$/.test(v.trim()) && v.replace(/\D/g, '').length >= 10) || 'Enter a valid phone number, for example +92 300 0000000.',
-        email: (v) => !v.trim() || /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) || 'Enter a valid email address, for example you@example.com.',
-        service: (v) => v.trim().length >= 3 || 'Tell us your vehicle or the service you need.',
-        message: (v) => !v.trim() || v.trim().length >= 10 || 'Add a little more detail (at least 10 characters).'
-      };
-      const fields = [...form.elements].filter((f) => rules[f.name]);
-      const validate = (f) => {
-        const r = rules[f.name](f.value);
-        $('#' + f.id + '-err').textContent = r === true ? '' : r;
-        f.setAttribute('aria-invalid', String(r !== true));
-        return r === true;
-      };
-      fields.forEach((f) => {
-        f.addEventListener('blur', () => { if (f.value || f.required) validate(f); });
-        f.addEventListener('input', () => { if (f.getAttribute('aria-invalid') === 'true') validate(f); });
-      });
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const bad = fields.filter((f) => !validate(f));
-        if (bad.length) { bad[0].focus(); return; }
-        form.hidden = true; form.reset(); done.hidden = false; done.focus();
-      });
-      $('#again').addEventListener('click', () => { done.hidden = true; form.hidden = false; fields[0].focus(); });
-    })();
-  </script>
+  <script src="js/script.js"></script>
 </body>
 </html>
