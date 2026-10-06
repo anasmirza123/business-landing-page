@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: al-noor-auto-workshop
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - { key: NODE_ENV, value: production }
+      - { key: TRUST_PROXY, value: "1" }
