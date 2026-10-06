@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Al-Noor Auto Workshop | Professional Auto Repair &amp; Service</title>
+  <meta name="description" content="Al-Noor Auto Workshop offers vehicle repair, routine maintenance and engine diagnostics with clear communication and careful workmanship. Demo portfolio website.">
+  <meta name="theme-color" content="#0f141a">
+  <!-- TODO: replace example.com with the real domain -->
+  <link rel="canonical" href="https://www.example.com/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23f5a524'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%230f141a' stroke-width='3'/%3E%3C/svg%3E">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Al-Noor Auto Workshop">
+  <meta property="og:title" content="Al-Noor Auto Workshop | Professional Auto Repair &amp; Service">
+  <meta property="og:description" content="Vehicle repair, maintenance and diagnostics with clear communication and careful workmanship.">
+  <meta property="og:url" content="https://www.example.com/">
+  <meta property="og:image" content="https://www.example.com/images/hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Al-Noor Auto Workshop | Professional Auto Repair &amp; Service">
+  <meta name="twitter:description" content="Vehicle repair, maintenance and diagnostics with clear communication and careful workmanship.">
+  <meta name="twitter:image" content="https://www.example.com/images/hero.jpg">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Local business structured data. All values are DEMO placeholders. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "Al-Noor Auto Workshop",
+    "url": "https://www.example.com/",
+    "image": "https://www.example.com/images/hero.jpg",
+    "telephone": "+92-300-0000000",
+    "email": "info@example.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Main Road",
+      "addressLocality": "Faisalabad",
+      "addressRegion": "Punjab",
+      "addressCountry": "PK"
+    },
+    "areaServed": "Faisalabad",
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "09:00",
+      "closes": "19:00"
+    }]
+  }
+  </script>
+</head>
+<body>
+  <!-- Icon sprite: <svg class="icon"><use href="#i-name"/></svg> -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+    <symbol id="i-gauge" viewBox="0 0 24 24"><path d="m12 14 4-4M3.34 19a10 10 0 1 1 17.32 0"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></symbol>
+    <symbol id="i-brake" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></symbol>
+    <symbol id="i-snow" viewBox="0 0 24 24"><path d="M2 12h20M12 2v20M16 4l-4 4-4-4M16 20l-4-4-4 4M4.9 7l14.2 10M19.1 7 4.9 17"/></symbol>
+    <symbol id="i-tire" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="2"/><path d="m4.9 4.9 4.2 4.2M14.9 14.9l4.2 4.2M19.1 4.9l-4.2 4.2M9.1 14.9l-4.2 4.2"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><path d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0L2 12V2h10l8.6 8.6a2 2 0 0 1 0 2.8z"/><circle cx="7" cy="7" r="1.5"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v4M15 1v4M9 19v4M15 19v4M1 9h4M1 15h4M19 9h4M19 15h4"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.7 7.4L3 20.5l1.6-5A8.5 8.5 0 1 1 21 11.5z"/><path d="M9 9c0 3 3 6 6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- 1. Header / navigation -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="Al-Noor Auto Workshop, home">
+        <span class="brand-mark"><svg class="icon"><use href="#i-wrench"/></svg></span>
+        <span>Al-Noor Auto Workshop</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="#home">Home</a></li>
+          <li><a class="nav-link" href="#services">Services</a></li>
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li><a class="nav-link" href="#why-us">Why Us</a></li>
+          <li><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li><a class="nav-link" href="#reviews">Reviews</a></li>
+          <li><a class="nav-link" href="#location">Location</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <a class="btn btn--primary" href="#contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- 2. Hero -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <img class="hero-img" src="images/hero.svg" width="1600" height="900" fetchpriority="high"
+           alt="Technician working on a car in a clean, well-lit auto workshop">
+      <div class="container hero-content">
+        <p class="hero-name">Al-Noor Auto Workshop</p>
+        <h1 id="hero-title">Reliable Auto Repair. Professional Service.</h1>
+        <p class="hero-text">We provide dependable vehicle repair and maintenance with careful workmanship, honest advice and a service experience built around you and your car.</p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="#contact">Book a Service</a>
+          <a class="btn btn--ghost" href="#" data-whatsapp><svg class="icon"><use href="#i-chat"/></svg>WhatsApp Us</a>
+        </div>
+        <ul class="chips">
+          <li>Open Monday to Saturday</li>
+          <li>Clear quotes before work starts</li>
+          <li>Diagnostics for most makes</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3. Services -->
+    <section class="section section--light" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="services-title">Our Auto Services</h2>
+          <p>Dependable repair and maintenance solutions for everyday vehicles, from routine servicing to fault finding.</p>
+        </div>
+        <div class="grid grid--services">
+          <article class="card">
+            <span class="icon-box"><svg class="icon"><use href="#i-gauge"/></svg></span>
+            <h3>Engine Diagnostics</h3>
+            <p>Professional inspection and diagnostics to identify vehicle problems accurately.</p>
+            <a class="link" href="#contact">Learn more<span class="sr-only"> about engine diagnostics</span></a>
+          </article>
+          <article class="card">
+            <span class="icon-box"><svg class="icon"><use href="#i-drop"/></svg></span>
+            <h3>Oil &amp; Filter Change</h3>
+            <p>Routine oil and filter replacement to help maintain engine performance.</p>
+            <a class="link" href="#contact">Learn more<span class="sr-only"> about oil and filter change</span></a>
+          </article>
+          <article class="card">
+            <span class="icon-box"><svg class="icon"><use href="#i-brake"/></svg></span>
+            <h3>Brake Service</h3>
+            <p>Brake inspection, repair, and maintenance for safer driving.</p>
+            <a class="link" href="#contact">Learn more<span class="sr-only"> about brake service</span></a>
+          </article>
+          <article class="card">
+            <span class="icon-box"><svg class="icon"><use href="#i-snow"/></svg></span>
+            <h3>AC &amp; Cooling</h3>
+            <p>Vehicle AC inspection, servicing, and cooling-system maintenance.</p>
+            <a class="link" href="#contact">Learn more<span class="sr-only"> about AC and cooling</span></a>
+          </article>
+          <article class="card">
+            <span class="icon-box"><svg class="icon"><use href="#i-tire"/></svg></span>
+            <h3>Tire &amp; Wheel Service</h3>
+            <p>Tire inspection, balancing, rotation, and related wheel services.</p>
+            <a class="link" href="#contact">Learn more<span class="sr-only"> about tire and wheel service</span></a>
+          </article>
+          <article class="card">
+            <span class="icon-box"><svg class="icon"><use href="#i-zap"/></svg></span>
+            <h3>Battery &amp; Electrical</h3>
+            <p>Battery checks and basic vehicle electrical diagnostics and repair.</p>
+            <a class="link" href="#contact">Learn more<span class="sr-only"> about battery and electrical</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. About -->
+    <section class="section section--white" id="about" aria-labelledby="about-title">
+      <div class="container split">
+        <img class="rounded" src="images/workshop.svg" width="1200" height="900" loading="lazy" decoding="async"
+             alt="Inside the Al-Noor Auto Workshop with a vehicle on a lift">
+        <div class="stack">
+          <h2 id="about-title">About Al-Noor Auto Workshop</h2>
+          <p>Al-Noor Auto Workshop is a fictional neighborhood garage created for this portfolio project. The copy describes the kind of workshop it represents: one that keeps vehicles safe and dependable, and keeps customers informed.</p>
+          <p>Every job starts with a proper inspection and a plain-language explanation of what your vehicle needs and what can wait.</p>
+          <ul class="checklist">
+            <li><svg class="icon"><use href="#i-check"/></svg>Careful, professional workmanship</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Honest communication at every step</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Reliable maintenance for everyday vehicles</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Safe, dependable service you can trust</li>
+          </ul>
+          <div><a class="btn btn--dark" href="#contact">Talk to our team</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Why choose us -->
+    <section class="section section--dark" id="why-us" aria-labelledby="why-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="why-title">Why Choose Al-Noor Auto Workshop?</h2>
+          <p>What you can expect every time you bring your vehicle in.</p>
+        </div>
+        <div class="grid grid--features">
+          <article class="card card--dark">
+            <span class="icon-box"><svg class="icon"><use href="#i-award"/></svg></span>
+            <h3>Experienced Technicians</h3>
+            <p>Skilled professionals focused on accurate and dependable vehicle service.</p>
+          </article>
+          <article class="card card--dark">
+            <span class="icon-box"><svg class="icon"><use href="#i-shield"/></svg></span>
+            <h3>Honest Service</h3>
+            <p>Clear communication about the work your vehicle needs.</p>
+          </article>
+          <article class="card card--dark">
+            <span class="icon-box"><svg class="icon"><use href="#i-wrench"/></svg></span>
+            <h3>Quality Workmanship</h3>
+            <p>Careful attention to every repair and maintenance job.</p>
+          </article>
+          <article class="card card--dark">
+            <span class="icon-box"><svg class="icon"><use href="#i-tag"/></svg></span>
+            <h3>Transparent Pricing</h3>
+            <p>Straightforward service information without unnecessary surprises.</p>
+          </article>
+          <article class="card card--dark">
+            <span class="icon-box"><svg class="icon"><use href="#i-cpu"/></svg></span>
+            <h3>Modern Diagnostics</h3>
+            <p>Use appropriate diagnostic tools to identify vehicle issues efficiently.</p>
+          </article>
+          <article class="card card--dark">
+            <span class="icon-box"><svg class="icon"><use href="#i-heart"/></svg></span>
+            <h3>Customer First</h3>
+            <p>A service experience designed around reliability, communication, and customer satisfaction.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Gallery (swap the src values for real photos) -->
+    <section class="section section--light" id="gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="gallery-title">Our Workshop &amp; Work</h2>
+          <p>A look at the workshop, the equipment and the jobs we handle every day.</p>
+        </div>
+        <div class="grid grid--gallery">
+          <figure><img src="images/gallery-1.svg" width="1200" height="900" loading="lazy" decoding="async" alt="Exterior of the Al-Noor Auto Workshop"><figcaption>Workshop exterior</figcaption></figure>
+          <figure><img src="images/gallery-2.svg" width="1200" height="900" loading="lazy" decoding="async" alt="Mechanic servicing a vehicle on the workshop floor"><figcaption>Technician at work</figcaption></figure>
+          <figure><img src="images/gallery-3.svg" width="1200" height="900" loading="lazy" decoding="async" alt="Close-up of an engine bay during inspection"><figcaption>Engine inspection</figcaption></figure>
+          <figure><img src="images/gallery-4.svg" width="1200" height="900" loading="lazy" decoding="async" alt="Brake disc and caliper being serviced"><figcaption>Brake service</figcaption></figure>
+          <figure><img src="images/gallery-5.svg" width="1200" height="900" loading="lazy" decoding="async" alt="Diagnostic scanner connected to a vehicle"><figcaption>Diagnostic equipment</figcaption></figure>
+          <figure><img src="images/gallery-6.svg" width="1200" height="900" loading="lazy" decoding="async" alt="Customer vehicle ready for collection outside the workshop"><figcaption>Customer vehicle</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Reviews (demo content) -->
+    <section class="section section--white" id="reviews" aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="reviews-title">What Our Customers Say</h2>
+          <p class="note">Demo testimonials written for this portfolio project. They are not real customer reviews.</p>
+        </div>
+        <div class="grid grid--reviews">
+          <article class="card review">
+            <p class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</p>
+            <blockquote><p>The team explained the problem clearly and completed the service professionally. The whole experience was smooth and straightforward.</p></blockquote>
+            <p class="review-name">Ahmed R.</p>
+          </article>
+          <article class="card review">
+            <p class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</p>
+            <blockquote><p>Professional service, friendly staff, and clear communication. I would definitely return for future maintenance.</p></blockquote>
+            <p class="review-name">Usman K.</p>
+          </article>
+          <article class="card review">
+            <p class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</p>
+            <blockquote><p>They told me exactly what needed fixing now and what could wait. No pressure, and the car runs well.</p></blockquote>
+            <p class="review-name">Sana M.</p>
+          </article>
+          <article class="card review">
+            <p class="stars" role="img" aria-label="4 out of 5 stars">★★★★☆</p>
+            <blockquote><p>Booking was easy over WhatsApp and the work was finished when they said it would be.</p></blockquote>
+            <p class="review-name">Bilal A.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Location -->
+    <section class="section section--light" id="location" aria-labelledby="location-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="location-title">Visit Our Workshop</h2>
+          <p class="note">The address and contact details below are demo placeholders.</p>
+        </div>
+        <div class="split split--map">
+          <div class="card info-card">
+            <h3>Al-Noor Auto Workshop</h3>
+            <ul class="info-list">
+              <li><svg class="icon"><use href="#i-pin"/></svg><address>123 Main Road, Faisalabad, Pakistan</address></li>
+              <li><svg class="icon"><use href="#i-clock"/></svg>
+                <div><strong>Opening hours</strong><br>Monday – Saturday: 9:00 AM – 7:00 PM<br>Sunday: Closed</div></li>
+              <li><svg class="icon"><use href="#i-phone"/></svg><a href="tel:+923000000000">+92 300 0000000</a></li>
+              <li><svg class="icon"><use href="#i-chat"/></svg><a href="#" data-whatsapp>Message us on WhatsApp</a></li>
+            </ul>
+          </div>
+          <!-- TODO: replace the q= value (or the whole src) with the real Google Maps embed URL -->
+          <div class="map">
+            <iframe title="Map showing the workshop area in Faisalabad" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    src="https://maps.google.com/maps?q=Faisalabad%2C%20Pakistan&amp;output=embed"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Contact + 10. WhatsApp CTA -->
+    <section class="section section--white" id="contact" aria-labelledby="contact-title">
+      <div class="container split split--contact">
+        <div class="stack">
+          <h2 id="contact-title">Get In Touch</h2>
+          <p>Tell us about your vehicle and what it needs. We will get back to you during opening hours. For a quicker reply, message us on WhatsApp.</p>
+          <div><a class="btn btn--whatsapp" href="#" data-whatsapp><svg class="icon"><use href="#i-chat"/></svg>Chat on WhatsApp</a></div>
+          <ul class="info-list">
+            <li><svg class="icon"><use href="#i-phone"/></svg><a href="tel:+923000000000">+92 300 0000000</a></li>
+            <li><svg class="icon"><use href="#i-mail"/></svg><a href="mailto:info@example.com">info@example.com</a></li>
+          </ul>
+        </div>
+
+        <div class="card form-card">
+          <form id="contact-form" novalidate>
+            <div class="field">
+              <label for="name">Full name <span aria-hidden="true">*</span></label>
+              <input id="name" name="name" type="text" autocomplete="name" placeholder="Your full name" required aria-describedby="name-error">
+              <p class="field-error" id="name-error"></p>
+            </div>
+            <div class="field">
+              <label for="phone">Phone number <span aria-hidden="true">*</span></label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+92 300 0000000" required aria-describedby="phone-error">
+              <p class="field-error" id="phone-error"></p>
+            </div>
+            <div class="field">
+              <label for="email">Email address</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" aria-describedby="email-error">
+              <p class="field-error" id="email-error"></p>
+            </div>
+            <div class="field">
+              <label for="service">Vehicle / service <span aria-hidden="true">*</span></label>
+              <input id="service" name="service" type="text" placeholder="e.g. Honda Civic 2018, brake service" required aria-describedby="service-error">
+              <p class="field-error" id="service-error"></p>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Describe the problem or the service you need" aria-describedby="message-error"></textarea>
+              <p class="field-error" id="message-error"></p>
+            </div>
+            <button class="btn btn--primary btn--block" type="submit">Send Inquiry</button>
+            <p class="form-note">Demo form: nothing is sent or stored.</p>
+          </form>
+          <div class="form-success" id="form-success" role="status" tabindex="-1" hidden>
+            <svg class="icon"><use href="#i-check"/></svg>
+            <h3>Inquiry received</h3>
+            <p>Thank you. In a live version, our team would contact you shortly.</p>
+            <button class="btn btn--dark" type="button" id="form-reset">Send another inquiry</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 11. Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-title">Al-Noor Auto Workshop</p>
+        <p>Reliable repair and maintenance with professional service.</p>
+      </div>
+      <nav aria-label="Footer">
+        <p class="footer-title">Quick links</p>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p class="footer-title">Contact</p>
+        <ul>
+          <li><a href="tel:+923000000000">+92 300 0000000</a></li>
+          <li><a href="#" data-whatsapp>WhatsApp</a></li>
+          <li><a href="mailto:info@example.com">info@example.com</a></li>
+          <li>123 Main Road, Faisalabad, Pakistan</li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-title">Opening hours</p>
+        <ul>
+          <li>Monday–Saturday: 9 AM–7 PM</li>
+          <li>Sunday: Closed</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Al-Noor Auto Workshop. All rights reserved.</p>
+      <p>Designed &amp; developed as a portfolio project. Demo business and contact details.</p>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="#" data-whatsapp aria-label="Chat on WhatsApp"><svg class="icon"><use href="#i-chat"/></svg></a>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
